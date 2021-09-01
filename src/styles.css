@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --color-primario: #4F37E9;
+    --color-primario-5: #4f37e9e7;
+    --bg-primario: #DCDFFF;
+}
+
+[data-theme="dark"] {
+    --color-primario: #1A1930;
+    --color-primario-5: #4f37e9e7;
+    --bg-primario: #2B2943;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    box-shadow: 0 0 5px 1px var(--color-primario-5);
+    border: none;
+}

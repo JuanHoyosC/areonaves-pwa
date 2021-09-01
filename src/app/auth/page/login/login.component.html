@@ -1,0 +1,28 @@
+<div class="contenedor-login">
+    <div class="row contenedor-columnas py-5 rounded">
+        <h3 class="mb-4 text-center">Login</h3>
+        <img src="../assets/plane-login.png" alt="plane" class="plane-login d-block mx-auto mb-3">
+        <form class="form" (submit)="ingresar()" [formGroup]="loginForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electronico</label>
+                <input type="email" [ngClass]="{'is-invalid': validarEmail}" class=" form-control rounded" id="email " placeholder="Correo electronico " formControlName="email">
+                <small class="text-danger " *ngIf="validarEmail ">Correo invalido</small>
+            </div>
+            <div class="mb-3 ">
+                <label for="password" class="form-label ">Contraseña</label>
+                <input type="password" [ngClass]="{'is-invalid': validarPassword}" class="form-control rounded " id="password " placeholder="Contraseña " formControlName="password">
+                <small class="text-danger " *ngIf="validarPassword ">La contraseña debe tener minimo 5 caracteres</small>
+            </div>
+
+            <div class="form-check mb-3 ">
+                <input class="form-check-input " type="checkbox " value=" " id="flexCheckDefault ">
+                <label class="form-check-label " for="flexCheckDefault ">
+                  Recordarme
+                </label>
+            </div>
+
+            <button class="btn btn-primary rounded d-block w-100 " type="submit " [disabled]="this.loginForm.invalid ">Ingresar</button>
+        </form>
+    </div>
+
+</div>

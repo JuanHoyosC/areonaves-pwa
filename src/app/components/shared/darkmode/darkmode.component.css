@@ -1,0 +1,11 @@
+.dark-mode {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.dark-mode-input {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
