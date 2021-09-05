@@ -1,1 +1,43 @@
-<p>dashboard works!</p>
+<div class="card">
+    <div class="card-body">
+
+        <!---Indicadores-->
+        <div class="indicadores row mb-3">
+            <div class="col-md-3 mb-3" *ngFor="let indicador of indicadores">
+                <app-indicadores [icono]="indicador.icono" [titulo]="indicador.titulo" [cantidad]="indicador.cantidad"></app-indicadores>
+            </div>
+        </div>
+
+        <!---Graficas-->
+        <div class="grafica row">
+            <div class="col-md-6 mb-3">
+                <app-dona [titulo]="'Usuarios'" [label]="['Usuarios', 'Admistrador']" [data]="[[cantidadUsuarios, cantidadAdmin]]"></app-dona>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <app-dona [titulo]="'Areonaves'" [label]="['Areonaves', 'Areonaves Libres']" [data]="[[cantidadAreonaves, cantidadAreonavesLibres]]"></app-dona>
+            </div>
+        </div>
+
+        <!---Usuarios-->
+        <div class="usuarios mb-5">
+            <h2>Usuarios</h2>
+            <app-table-usuarios [usuarios]="usuarios"></app-table-usuarios>
+        </div>
+
+
+        <!---Areonaves-->
+        <div class="areonaves">
+
+            <div class="d-flex justify-content-between mb-3">
+                <h2 class="mb-0">Areonaves</h2>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#areonaveModal">
+                    <i class="fas fa-plus-circle"></i> Crear areonave
+                </button>
+            </div>
+            <app-table-areonaves [areonaves]="areonaves"></app-table-areonaves>
+        </div>
+    </div>
+</div>
+
+<app-crear-areonave></app-crear-areonave>

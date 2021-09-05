@@ -3,15 +3,14 @@
     display: flex;
     height: 100vh;
     width: 100%;
-    background-color: var(--bg-primario);
 }
 
 .contenedor-columnas {
-    background-color: #fff;
+    background-color: var(--bg-secundario);
     max-width: 320px;
     width: 100%;
     margin: 0 auto;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+    box-shadow: 2px 2px 5px var(--color-shadow);
 }
 
 .plane-login {

@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-md-center" scope="col">Usuario</th>
+            <th class="text-md-center" scope="col">Correo</th>
+            <th class="text-md-center" scope="col">Areonaves alquiladas</th>
+            <th class="text-md-center" scope="col">Role</th>
+            <th class="text-md-center" scope="col">Editar</th>
+            <th class="text-md-center" scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td data-label="Usuario" class="text-md-center">{{ usuario.usuario }}</td>
+            <td data-label="Correo" class="text-md-center">{{ usuario.correo }}</td>
+            <td data-label="Areonaves" class="text-md-center">{{ usuario.areonaves?.length || 0 }}</td>
+            <td data-label="Role" class="text-md-center">{{ usuario.role }}</td>
+            <td data-label="Editar" class="text-md-center"><button class="btn btn-warning" (click)="seleccionarUsuario(usuario)" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="fas fa-user-edit me-2"></i> Editar</button></td>
+            <td data-label="Eliminar" class="text-md-center"><button class="btn btn-danger" (click)="eliminarUsuario(usuario.id)"><i class="fas fa-trash me-2"></i> Eliminar</button></td>
+        </tr>
+    </tbody>
+</table>
+<app-modal-editar [usuario]="usuarioSeleccionado" (actualizar)="actualizarUsuario($event)"></app-modal-editar>

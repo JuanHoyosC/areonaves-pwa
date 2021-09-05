@@ -1,0 +1,33 @@
+<div class="contenedor-login">
+    <div class="row contenedor-columnas py-5 rounded">
+        <h3 class="mb-4 text-center">Registrarse</h3>
+        <img src="../assets/images/astronaut.png" alt="plane" class="plane-login d-block mx-auto mb-3">
+        <form class="form" (submit)="registrarse()" [formGroup]="registroForm">
+
+            <!---Correo electronico-->
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electronico</label>
+                <input type="email" [ngClass]="{'is-invalid': validarCorreo}" class=" form-control rounded" id="correo" placeholder="Correo electronico " formControlName="correo">
+                <small class="text-danger " *ngIf="validarCorreo ">Correo invalido</small>
+            </div>
+
+            <!---Usuario-->
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" [ngClass]="{'is-invalid': validarUsuario}" class="form-control rounded" id="usuario" placeholder="Ingrese un usuario" formControlName="usuario">
+                <small class="text-danger " *ngIf="validarUsuario ">Usuario invalido</small>
+            </div>
+
+            <!---password-->
+            <div class="mb-3 ">
+                <label for="password" class="form-label ">Contraseña</label>
+                <input type="password" [ngClass]="{'is-invalid': validarPassword}" class="form-control rounded " id="password " placeholder="Contraseña " formControlName="password">
+                <small class="text-danger " *ngIf="validarPassword ">La contraseña debe tener minimo 5 caracteres</small>
+            </div>
+
+            <button class="btn btn-primary rounded d-block w-100 mb-3" type="submit" [disabled]="this.registroForm.invalid">Registrarse</button>
+            <label>¿Ya tienes cuenta? <a class="link" routerLink="/auth/login">Iniciar sesión</a></label>
+        </form>
+    </div>
+
+</div>

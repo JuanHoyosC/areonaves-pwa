@@ -1,0 +1,15 @@
+.ocupado {
+    background-color: var(--color-critical);
+    color: #fff;
+}
+
+.libre {
+    background-color: var(--color-libre);
+    color: #fff;
+}
+
+.estado {
+    padding: .2rem .5rem;
+    border-radius: .2rem;
+    text-align: center;
+}

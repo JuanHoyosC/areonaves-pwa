@@ -7,15 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DarkmodeComponent implements OnInit {
 
+  image: string = 'sun';
   constructor() { }
 
   ngOnInit(): void {
+    const modo = localStorage.getItem('darkmode') || 'light';
+    this.escogerModo(modo);
   }
 
   cambiarTema(elemento: any) {
-    console.log(elemento.checked)
-    const theme = elemento.checked ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', theme);
+    const modo = elemento.checked ? 'dark' : 'light';
+    this.escogerModo(modo);
+    localStorage.setItem('darkmode', modo);
+  }
+
+  escogerModo(modo: string) {
+    this.image = modo === 'dark' ? 'moon' : 'sun';
+    document.documentElement.setAttribute('data-theme', modo);
   }
 
 }

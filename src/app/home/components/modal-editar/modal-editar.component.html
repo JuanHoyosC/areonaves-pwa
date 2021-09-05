@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEditarLabel">Editar usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!----Formulario de actualización-->
+                <form (submit)="actualizarUsuario()">
+
+                    <!----Correo electronico-->
+                    <div class=" mb-3 ">
+                        <label for="correo" class="form-label ">Correo electronico</label>
+                        <input type="email" name="correo" class="form-control " id="correo " placeholder="Correo electronico " [(ngModel)]="usuario.correo">
+                    </div>
+
+                    <!----Nombre de usuario-->
+                    <div class="mb-3 ">
+                        <label for="usuario" class="form-label ">Usuarios</label>
+                        <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Usuario" [(ngModel)]="usuario.usuario">
+                    </div>
+
+                    <!----Rol-->
+                    <div class="mb-3 ">
+                        <label for="correo " class="form-label ">Rol</label>
+                        <select class="form-select" name="role" [(ngModel)]="usuario.role">
+                            <option value="admin">Admin</option>
+                            <option value="piloto">Piloto</option>
+                          </select>
+                    </div>
+
+                    <button class="btn btn-primary " type="submit" data-bs-dismiss="modal" aria-label="Close">Actualizar usuario</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.indicador {
+    padding: .5rem;
+    background: blue;
+    border-radius: .3rem;
+}
+
+.indicador-icono i {
+    font-size: 1.5rem;
+}
+
+.indicador-texto-h4,
+.indicador-texto-p {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-bottom: 0rem;
+    color: var(--color-primario-texto);
+}

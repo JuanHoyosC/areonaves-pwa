@@ -1,4 +1,9 @@
-<label for="darkMode" class="dark-mode">
-    DarkMode
-    <input type="checkbox" class="dark-mode-input" id="darkMode"(change)="cambiarTema(darkMode)" #darkMode>
-</label>
+<div>
+    <input type="checkbox" class="checkbox" id="darkMode" (change)="cambiarTema(darkMode)" #darkMode>
+    <label for="darkMode" class="label">
+    <i class="fas fa-moon"></i>
+    <i class='fas fa-sun'></i>
+    <div class='ball'>
+    </div>
+  </label>
+</div>

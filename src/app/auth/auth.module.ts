@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 //Paginas
-import { LoginComponent } from './page/login/login.component';
-import { RegistroComponent } from './page/registro/registro.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 
 //Rutas 
@@ -17,7 +16,6 @@ import { AuthRoutingModule } from './auth-routing.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule,
     AuthRoutingModule
   ]
 })

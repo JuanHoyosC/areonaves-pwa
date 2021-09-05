@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-md-center" scope="col">Usuario</th>
+            <th class="text-md-center" scope="col">Ubicacion</th>
+            <th class="text-md-center" scope="col">Salida</th>
+            <th class="text-md-center" scope="col">Llegada</th>
+            <th class="text-md-center" scope="col">Pasajeros</th>
+            <th class="text-md-center" scope="col">Estatus</th>
+            <th class="text-md-center" scope="col">Editar</th>
+            <th class="text-md-center" scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let areonave of areonaves">
+            <td data-label="Usuario" class="text-md-center"></td>
+            <td data-label="Ubicacion" class="text-md-center">{{ areonave.ubicacion }}</td>
+            <td data-label="Salida" class="text-md-center">{{ areonave.salida }}</td>
+            <td data-label="Llegada" class="text-md-center">{{ areonave.llegada }}</td>
+            <td data-label="Pasajeros" class="text-md-center">{{ areonave.pasajeros }}</td>
+            <td data-label="Estatus" class="text-md-center"><span class=" estado " [ngClass]="{ 'libre': !areonave.reservado, 'ocupado': areonave.reservado} ">{{ areonave.reservado ? 'Ocupada' : 'Libre' }}</span> </td>
+            <td data-label="Editar" class="text-md-center"><button class="btn btn-warning " (click)="seleccionarAreonave(areonave) " data-bs-toggle="modal " data-bs-target="#modalEditar "><i class="fas fa-user-edit me-2 "></i> Editar</button></td>
+            <td data-label="Eliminar" class="text-md-center"><button class="btn btn-danger" (click)="eliminarAreonave(areonave.id) "><i class="fas fa-trash me-2 "></i> Eliminar</button></td>
+        </tr>
+    </tbody>
+</table>

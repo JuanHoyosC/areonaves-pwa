@@ -1,0 +1,29 @@
+.contenedor-login {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.contenedor-columnas {
+    background-color: var(--bg-secundario);
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 5px var(--color-shadow);
+}
+
+.plane-login {
+    max-width: 100px;
+    width: 100%;
+}
+
+.btn {
+    background-color: var(--color-primario) !important;
+    outline: none;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--color-primario-5) !important;
+}

@@ -1,35 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-    --color-primario: #4F37E9;
+    --color-primario: #4f37e9;
     --color-primario-5: #4f37e9e7;
-    --bg-primario: #DCDFFF;
+    --color-primario-texto: #000;
+    --bg-primario: #ececec;
+    --bg-secundario: #fff;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-critical: #ff3838;
+    --color-libre: #2dccff;
 }
 
 [data-theme="dark"] {
-    --color-primario: #1A1930;
-    --color-primario-5: #4f37e9e7;
-    --bg-primario: #2B2943;
+    --color-primario: #ffffff;
+    --color-primario-5: #b0a6f0e7;
+    --color-primario-texto: #fff;
+    --bg-primario: #36373a;
+    --bg-secundario: #1f2229;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-critical: #ff3838;
+    --color-libre: #2dccff;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    transition: all 1s ease-in-out;
+    color: var(--color-primario-texto);
 }
 
 textarea:focus,
 textarea.form-control:focus,
 input.form-control:focus,
-input[type=text]:focus,
-input[type=password]:focus,
-input[type=email]:focus,
-input[type=number]:focus,
-[type=text].form-control:focus,
-[type=password].form-control:focus,
-[type=email].form-control:focus,
-[type=tel].form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+button:focus,
+button:hover,
+button:active,
+[type="text"].form-control:focus,
+[type="password"].form-control:focus,
+[type="email"].form-control:focus,
+[type="tel"].form-control:focus,
 [contenteditable].form-control:focus {
-    box-shadow: 0 0 5px 1px var(--color-primario-5);
-    border: none;
+    /*box-shadow: 0 0 5px 1px var(--color-primario-5);*/
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+@media (max-width: 980px) {
+    .table thead {
+        display: none;
+    }
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+    .table tr {
+        margin-bottom: 15px;
+    }
+    .table td {
+        text-align: left;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: .5rem .5rem;
+        gap: .5rem;
+    }
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #000;
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-primario);
+}
+
+.link:hover {
+    color: var(--color-primario-5);
 }
