@@ -33,5 +33,18 @@
                 ]
             }
         }
-    ]
+    ],
+    "dataGroups": [{
+        "name": "api-performance",
+        "urls": [
+            "https://obscure-harbor-49611.herokuapp.com/api/areonave/obtener",
+            "https://obscure-harbor-49611.herokuapp.com/api/usuario/obtener"
+        ],
+        "cacheConfig": {
+            "strategy": "freshness",
+            "maxSize": 5,
+            "maxAge": "50m",
+            "timeout": "5s"
+        }
+    }]
 }
