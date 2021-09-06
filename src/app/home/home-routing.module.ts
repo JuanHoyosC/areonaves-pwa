@@ -5,7 +5,7 @@ import { HomeComponent } from './home.component';
 //Pages
 import { AreonavesComponent } from './pages/areonaves/areonaves.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { MisAreonavesComponent } from './pages/mi-areonaves/mis-areonaves.component';
+
 
 //Guards
 import { AuthRolGuard } from './guards/auth-rol.guard';
@@ -23,10 +23,6 @@ const routes: Routes = [
       {
         path: 'areonaves',
         component: AreonavesComponent
-      },
-      {
-        path: 'mis-areonaves',
-        component: MisAreonavesComponent
       },
       {
         path: '**',

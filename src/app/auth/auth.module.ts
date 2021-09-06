@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 
+//Darkmode
 
 //Rutas 
 import { AuthRoutingModule } from './auth-routing.module';

@@ -12,3 +12,13 @@
 .navbar-brand {
     color: var(--color-secundario) !important;
 }
+
+.nav-link.active {
+    color: var(--color-primario) !important;
+}
+
+@media screen and (max-width: 994px) {
+    .nav-link {
+        margin-left: 2.5rem;
+    }
+}

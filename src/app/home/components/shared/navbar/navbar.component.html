@@ -7,19 +7,17 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 justify-content-between">
-                <li class="nav-item" *ngIf="_usuario.validarRol()">
-                    <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="dashboard">Dashboard</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" *ngIf="_usuario.usuario.role === 'admin'">
+                    <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="dashboard">Dashboard</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="areonaves">Areonaves</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link pointer" aria-current="page" (click)="_usuario.salir()">Salir</a>
+                    <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="areonaves">Areonaves</a>
                 </li>
             </ul>
+            <a class="nav-link px-0 pointer" aria-current="page" (click)="_usuario.salir()">Salir</a>
+
         </div>
 
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-darkmode',
@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DarkmodeComponent implements OnInit {
 
-  image: string = 'sun';
-  constructor() { }
+  icono: string = 'fa-lightbulb';
+  constructor(ElementRef: ElementRef) { 
+    this.darkRef = ElementRef;
+  }
+
+  @ViewChild('darkMode', {static: true}) darkRef: ElementRef;
 
   ngOnInit(): void {
     const modo = localStorage.getItem('darkmode') || 'light';
@@ -22,7 +26,9 @@ export class DarkmodeComponent implements OnInit {
   }
 
   escogerModo(modo: string) {
-    this.image = modo === 'dark' ? 'moon' : 'sun';
+    console.log(this.darkRef.nativeElement.checked)
+    this.icono = modo === 'dark' ? 'fa-moon' : 'fa-lightbulb';
+    this.darkRef.nativeElement.checked = modo === 'dark' ? true : false;
     document.documentElement.setAttribute('data-theme', modo);
   }
 

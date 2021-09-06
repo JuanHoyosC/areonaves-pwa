@@ -1,9 +1,4 @@
-<div class="darkmodecontent">
+<label class="darkmode pointer" for="darkMode" [ngClass]="{ 'rotate':darkMode.checked }">
     <input type="checkbox" class="checkbox" id="darkMode" (change)="cambiarTema(darkMode)" #darkMode>
-    <label for="darkMode" class="label">
-    <i class="fas fa-moon"></i>
-    <i class='fas fa-sun'></i>
-    <div class='ball'>
-    </div>
+    <i class="fas darkmode-icono" [ngClass]="icono"></i>
   </label>
-</div>

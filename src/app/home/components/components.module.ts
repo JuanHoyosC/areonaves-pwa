@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
-
+import { RouterModule } from '@angular/router';
+ 
 //Componentes
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { IndicadoresComponent } from './indicadores/indicadores.component';
@@ -33,6 +34,7 @@ import { PalabrasPipe } from '../pipes/palabras.pipe';
     imports: [
         CommonModule,
         FormsModule,
+        RouterModule,
         ReactiveFormsModule,
         ChartsModule],
     exports: [

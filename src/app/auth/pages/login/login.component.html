@@ -14,13 +14,6 @@
                 <small class="text-danger " *ngIf="validarPassword ">La contraseña debe tener minimo 5 caracteres</small>
             </div>
 
-            <div class="form-check mb-3 ">
-                <input class="form-check-input " type="checkbox " value=" " id="flexCheckDefault ">
-                <label class="form-check-label " for="flexCheckDefault ">
-                  Recordarme
-                </label>
-            </div>
-
             <button class="btn btn-primary rounded d-block w-100 mb-3" type="submit " [disabled]="this.loginForm.invalid ">Ingresar</button>
             <label>¿No tienes cuenta? <a class="link" routerLink="/auth/registro">Registrarse</a></label>
         </form>
