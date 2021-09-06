@@ -27,7 +27,7 @@ export class RegistroComponent implements OnDestroy {
 
   //Obtiene si el correo fue clikeado y además si aún no es valido
   get validarCorreo() {
-    return this.registroForm.get('email')?.touched && this.registroForm.get('email')?.invalid;
+    return this.registroForm.get('correo')?.touched && this.registroForm.get('correo')?.invalid;
   }
 
   //Obtiene si el usuario fue clikeado y además si aún no es valido

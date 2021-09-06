@@ -28,6 +28,8 @@ export class UsuariosService {
       const token = localStorage.getItem('token') || '';
       const usuario: any = jwt_decode(token);
 
+      console.log(usuario?.uid)
+
       //Añade el usuario a un objeto
       this.usuario = usuario?.uid;
     } catch (error) {

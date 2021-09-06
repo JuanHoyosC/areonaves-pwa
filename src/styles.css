@@ -4,6 +4,7 @@
 :root {
     --bg-primario: #dfdfdf;
     --bg-secundario: #fff;
+    --bg-select: transparent;
     --color-primario: #4f37e9;
     --color-primario-5: #4f37e9e7;
     --color-secundario: #0a0a0a;
@@ -20,6 +21,7 @@
 [data-theme="dark"] {
     --bg-primario: #000;
     --bg-secundario: #191C24;
+    --bg-select: #191C24;
     --bg-input: transparent;
     --color-input: #fff;
     --color-secundario: #fff;
@@ -31,7 +33,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    transition: background 1s ease-in-out;
+    transition: background 1s linear;
 }
 
 textarea:focus,
@@ -150,16 +152,20 @@ select,
 }
 
 .form-control,
-.form-select,
-.form-select option {
+.form-select {
     background-color: var(--bg-input);
     color: var(--color-input);
     border-color: var(--color-border);
 }
 
-.form-control:focus,
-.form-select:focus {
+.form-control:focus {
     background-color: var(--bg-input);
+    color: var(--color-input);
+    border-color: var(--color-primario);
+}
+
+.form-select:focus {
+    background-color: var(--bg-select);
     color: var(--color-input);
     border-color: var(--color-primario);
 }

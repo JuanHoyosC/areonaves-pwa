@@ -50,6 +50,7 @@ export class DashboardComponent implements OnInit {
 
     //Obtiene todos los usuarios que se encuentra en la db
     this._usuarios.obtenerUsuarios().subscribe(usuarios => {
+
       this.usuarios = usuarios;
 
       //Cantidad de usuarios
@@ -68,7 +69,7 @@ export class DashboardComponent implements OnInit {
       //Cantidad total de areonaves
       this.indicadores[2].cantidad = areonaves.length;
       this.cantidadAreonaves = areonaves.length;
-      console.log(areonaves)
+
       //Cuantas areonaves libres hay
       this.indicadores[3].cantidad = areonaves.filter((areonave: any) => !areonave.reservado).length;
       this.cantidadAreonavesLibres = this.indicadores[3].cantidad;

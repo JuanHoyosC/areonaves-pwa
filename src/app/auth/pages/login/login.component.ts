@@ -29,7 +29,7 @@ export class LoginComponent implements OnDestroy {
 
   //Obtiene si el correo fue clikeado y además si aún no es valido
   get validarCorreo() {
-    return this.loginForm.get('email')?.touched && this.loginForm.get('email')?.invalid;
+    return this.loginForm.get('correo')?.touched && this.loginForm.get('correo')?.invalid;
   }
 
   //Obtiene si el password fue clikeado y además si aún no es valido
