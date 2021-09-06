@@ -1,27 +1,37 @@
 # AereoNaves
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
+Este proyecto se realizo como prueba tenica para el cargo de desarrollador Angular
 
-## Development server
+### proyecto desplegado  en: [areonaves.netlify.app](https://areonaves.netlify.app/auth/login)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Inicialización del proyecto
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ng serve -o
 
-## Running unit tests
+## Metodos usados
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Inicizalizacion del backend
 
-## Running end-to-end tests
+* ## git clone https://github.com/JuanHoyosC/areonaves-backend.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* ## npm install
 
-## Further help
+* ## npm run serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* ## en otra consola ejercutar npm start
+ 
+## Metodos trabajados
+
+* Pipes: Se creo un pipe personalizado para que no puede haber textos de más de 15 palabras
+* Interceptors: Se encarga de enviar el token midiante los headers en cada una de las peticions y de mostrar los errores
+* Lazy loading
+* Input: Se trabajo con componentes que reciben data que será mostrada en tablas
+* Output: Se trabajo para notificar al componente padre cuando un elemento fue actualizado
+* JWT: Para la autenticación se trabajo con JWT
+* PWA: La aplicación puede ser instalada en los dispositivos moviles gracias a los services workers
+* Responsive: La aplicación es 100% responsive
+* Modulos: Los componentes se trabajaron en un componente apartrado al module principal
