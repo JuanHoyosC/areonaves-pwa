@@ -1,9 +1,9 @@
-<div class="d-flex align-items-center indicador">
-    <div class="indicador-icono me-3">
-        <i [ngClass]="icono"></i>
-    </div>
-    <div class="indicador-texto">
+<div class="indicador" [ngClass]="claseIndicador">
+    <div class="indicador-icono mb-1">
         <h4 class="indicador-texto-h4">{{ titulo }}</h4>
+    </div>
+    <div class="indicador-texto d-flex align-items-center">
+        <i [ngClass]="icono" class="me-3"></i>
         <p class="indicador-texto-p">{{ cantidad }}</p>
     </div>
 </div>

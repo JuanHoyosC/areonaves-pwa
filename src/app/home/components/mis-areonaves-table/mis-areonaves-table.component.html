@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-md-center" scope="col">Ubicacion</th>
+            <th class="text-md-center" scope="col">Salida</th>
+            <th class="text-md-center" scope="col">Llegada</th>
+            <th class="text-md-center" scope="col">Pasajeros</th>
+            <th class="text-md-center" scope="col">Estado</th>
+            <th class="text-md-center" scope="col">Liberar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let areonave of areonaves">
+            <td data-label="Ubicacion" class="text-md-center">{{ areonave.ubicacion | palabras}}</td>
+            <td data-label="Salida" class="text-md-center">{{ areonave.salida | palabras}}</td>
+            <td data-label="Llegada" class="text-md-center">{{ areonave.llegada | palabras}}</td>
+            <td data-label="Pasajeros" class="text-md-center">{{ areonave.pasajeros }}</td>
+            <td data-label="Estado" class="text-md-center"><span class=" estado " [ngClass]="{ 'libre': !areonave.reservado, 'ocupado': areonave.reservado} ">{{ areonave.reservado ? 'Ocupada' : 'Libre' }}</span> </td>
+            <td data-label="Liberar" class="text-md-center"><button class="btn btn-primary" (click)="liberarAreonave(areonave.id)" [disabled]="!areonave.reservado">Liberar</button> </td>
+        </tr>
+    </tbody>
+</table>

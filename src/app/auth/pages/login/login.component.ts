@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
+import { AlertasService } from 'src/app/services/alertas.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnDestroy {
 
   public loginObs$: Subscription = new Subscription();
 
-  constructor(private formBuilder: FormBuilder, private _auth: AuthService) { 
+  constructor(private formBuilder: FormBuilder, private _auth: AuthService, private _alertas: AlertasService) { 
   }
 
   ngOnDestroy(): void {
@@ -40,7 +41,6 @@ export class LoginComponent implements OnDestroy {
   //Se encarga de enviar la información al back midiante el authServices
   ingresar() {
     if (this.loginForm.invalid) return;
-
     this.loginObs$ = this._auth.login(this.loginForm.value).subscribe();
   }
 

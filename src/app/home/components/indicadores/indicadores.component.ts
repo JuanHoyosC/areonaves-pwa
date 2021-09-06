@@ -10,6 +10,8 @@ export class IndicadoresComponent {
   @Input() icono: string = '';
   @Input() titulo: string = '';
   @Input() cantidad: number = 0;
+  @Input() claseIndicador: string = '';
+
   constructor() { }
 
 

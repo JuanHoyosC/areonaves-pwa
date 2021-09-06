@@ -1,1 +1,67 @@
-<p>areonaves works!</p>
+<div class="card">
+    <div class="card-body">
+
+        <!----Alquilar areonave-->
+        <form class="form-alquiler mb-5" [formGroup]="areonaveForm" (submit)="alquilar()" *ngIf="areonavesLibres.length !== 0">
+            <div class="row mb-3">
+                <!--- Input ubicación --->
+                <div class="col-md-6 mb-3">
+                    <label for="ubicacion" class="form-label">Ubicación</label>
+                    <input type="text" class="form-control" formControlName="ubicacion" id="ubicacion" placeholder="¿A donde vas?">
+                    <small *ngIf="errorCampo('ubicacion')" class="text-danger">Debes ingresar una fecha</small>
+                </div>
+
+                <!----- input pasajeros -->
+                <div class="col-md-6">
+                    <label for="pasajeros" class="form-label">Pasajeros</label>
+                    <input type="number" class="form-control" formControlName="pasajeros" id="pasajeros" placeholder="Cantidad de pasajeros">
+                    <small *ngIf="errorPasajeros()" class="text-danger">Debes tener más de 10 pasajeros</small>
+                </div>
+
+                <!---Input salida-->
+                <div class="col-md-6 mb-3">
+                    <label for="salida" class="form-label">Salida</label>
+                    <input type="date" class="form-control" [ngClass]="{'is-invalid': errorCampo('salida')}" formControlName="salida" id="salida" placeholder="Fecha de salida">
+                    <small *ngIf="errorCampo('salida')" class="text-danger">Debes ingresar una fecha</small>
+                </div>
+
+                <!---Input llegada-->
+                <div class="col-md-6 mb-3">
+                    <label for="llegada" class="form-label">Llegada</label>
+                    <input type="date" class="form-control" formControlName="llegada" id="llegada" placeholder="Fecha de partida">
+                    <small *ngIf="errorCampo('llegada')" class="text-danger">Debes ingresar una fecha</small>
+                    <small *ngIf="errorFecha()" class="text-danger">La fecha de salida debe ser menor o igual a la de llegada</small>
+                </div>
+
+                <!---  Input areonaveId -->
+                <div class="col-md-6 mb-3">
+                    <label for="areonaves" class="form-label">Areonaves disponibles</label>
+                    <select class="form-select" id="areonaves" formControlName="areonaveId">
+                        <option selected value="">Seleccione una areonave</option>
+                        <option [value]="areonave.id" *ngFor="let areonave of areonavesLibres;">
+                            Areonave {{ areonave.id }}
+                        </option>
+                    </select>
+                    <small *ngIf="errorCampo('areonaveId')" class="text-danger">Debe seleccionar una areonave</small>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" [disabled]="areonaveForm.invalid">Alquilar</button>
+        </form>
+
+
+        <!---areonaves no disponible-->
+        <div class="p-3 no-areonave" *ngIf="areonavesLibres.length === 0">
+            <img src="./assets/images/astronaut2.png" alt="astronaut" class="astronauta d-block mx-auto">
+            <h2 class="text-center">No hay areonaves disponibles :(</h2>
+        </div>
+
+        <!---- Muestra el historico de las areonaves alquiladas---->
+        <div *ngIf="MisAreonaves.length !== 0">
+            <h3 class="mb-3">Historico de areonaves</h3>
+            <app-mis-areonaves-table (liberarEvent)="actualizarAreonavesLibres($event)" [areonaves]="MisAreonaves">
+            </app-mis-areonaves-table>
+        </div>
+
+    </div>
+</div>

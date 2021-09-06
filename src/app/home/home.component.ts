@@ -4,8 +4,7 @@ import { UsuariosService } from './services/usuarios.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class HomeComponent implements OnInit {
 

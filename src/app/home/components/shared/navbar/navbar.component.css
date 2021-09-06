@@ -1,0 +1,14 @@
+.icono-nav {
+    width: 2rem;
+}
+
+.navbar-light.bg-light {
+    background-color: var(--bg-secundario) !important;
+}
+
+.bg-light,
+.nav-link,
+.fa-bars,
+.navbar-brand {
+    color: var(--color-secundario) !important;
+}

@@ -4,7 +4,7 @@
         <!---Indicadores-->
         <div class="indicadores row mb-3">
             <div class="col-md-3 mb-3" *ngFor="let indicador of indicadores">
-                <app-indicadores [icono]="indicador.icono" [titulo]="indicador.titulo" [cantidad]="indicador.cantidad"></app-indicadores>
+                <app-indicadores [icono]="indicador.icono" [titulo]="indicador.titulo" [cantidad]="indicador.cantidad" [claseIndicador]="indicador.clase"></app-indicadores>
             </div>
         </div>
 
@@ -28,10 +28,9 @@
 
         <!---Areonaves-->
         <div class="areonaves">
-
             <div class="d-flex justify-content-between mb-3">
                 <h2 class="mb-0">Areonaves</h2>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#areonaveModal">
+                <button type="button" class="btn btn-primary" (click)="crearAreonave()">
                     <i class="fas fa-plus-circle"></i> Crear areonave
                 </button>
             </div>
@@ -39,5 +38,3 @@
         </div>
     </div>
 </div>
-
-<app-crear-areonave></app-crear-areonave>

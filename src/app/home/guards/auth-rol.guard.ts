@@ -11,7 +11,6 @@ export class AuthRolGuard implements CanActivate {
   canActivate(): boolean{
 
     if(!this._usuarios.validarRol()) {
-      console.log('err')
       this.route.navigateByUrl('/areonaves');
       return false;
     }

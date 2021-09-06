@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { AlertasService } from 'src/app/services/alertas.service';
 import { AreonavesService } from '../../services/areonaves.service';
 
 @Component({
@@ -11,24 +12,17 @@ export class TableAreonavesComponent {
   @Input() areonaves: any[] = [];
   areonaveSeleccionada: any = {};
 
-  constructor(private _areonaves: AreonavesService) { }
-
-
-
+  constructor(private _areonaves: AreonavesService, private _alertas: AlertasService) { }
 
 
   eliminarAreonave(id: string) {
     this.areonaves = this.areonaves.filter(areonave => areonave.id !== id);
-    //this._areonaves.eliminarareonave(id).subscribe( res => console.log(res));
+    this._areonaves.eliminarAreonave(id).subscribe( (res: any) => this._alertas.mensajeSuccess(res.msg));
   }
 
-  actualizarAreonave(areonave: any) {
-   // this._areonaves.actualizarareonave(areonave).subscribe( res => console.log(res), error => console.log);
-  }
 
   seleccionarAreonave(areonave: any) {
     this.areonaveSeleccionada = areonave;
   }
-
 
 }

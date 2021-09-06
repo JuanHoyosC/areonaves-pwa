@@ -1,5 +1,11 @@
 .dark-mode {}
 
+.darkmodecontent {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+}
+
 .dark-mode-input {
     width: 1px;
     height: 1px;
@@ -19,7 +25,7 @@
 .label {
     width: 50px;
     height: 26px;
-    background-color: #111;
+    background-color: var(--bg-secundario);
     display: flex;
     border-radius: 50px;
     align-items: center;
@@ -32,7 +38,7 @@
 .ball {
     width: 20px;
     height: 20px;
-    background-color: white;
+    background-color: var(--color-secundario);
     position: absolute;
     top: 2px;
     left: 2px;

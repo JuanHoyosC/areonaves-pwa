@@ -13,6 +13,13 @@ export class DonaComponent implements OnInit {
   @Input('data') public doughnutChartData: MultiDataSet = [
     [350, 450, 100],
   ];
+
+  public chartColors: Array<any> = [
+    { // all colors in order
+      backgroundColor: ['#4f37e9e7', '#1a82a5'],
+      borderWidth: [0,0,0],
+    }
+]
   
   @Input() titulo: string = '';
   public doughnutChartType: ChartType = 'doughnut';

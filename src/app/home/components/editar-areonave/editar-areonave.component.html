@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="areonaveEditar" tabindex="-1" aria-labelledby="areonaveEditarLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title" id="areonaveEditarLabel">Editar areonave</h4>
+
+            </div>
+            <div class="modal-body">
+                <form (submit)="actualizarAreonave()">
+
+                    <!----Correo electronico-->
+                    <div class=" mb-3 ">
+                        <label for="ubicacion" class="form-label ">Ubicacion</label>
+                        <input type="text" name="ubicacion" class="form-control" id="ubicacion" placeholder="Ubicaicon" [(ngModel)]="areonave.ubicacion">
+                    </div>
+
+                    <!----Nombre de usuario-->
+                    <div class="mb-3 ">
+                        <label for="salida" class="form-label ">Salida</label>
+                        <input type="date" name="llegada" class="form-control" id="salida" placeholder="Fecha de salida" [(ngModel)]="areonave.salida">
+                    </div>
+
+                    <!----Rol-->
+                    <!----Nombre de usuario-->
+                    <div class="mb-3">
+                        <label for="llegada" class="form-label ">Llegada</label>
+                        <input type="date" name="llegada" class="form-control" id="llegada" placeholder="Fecha de llegada" [(ngModel)]="areonave.llegada ">
+                    </div>
+                    <!----Nombre de usuario-->
+                    <div class="mb-3">
+                        <label for="pasajeros" class="form-label ">Pasajeros</label>
+                        <input type="number" name="pasajeros" class="form-control" id="pasajero" placeholder="Cantidad de pasajeros " [(ngModel)]="areonave.pasajeros ">
+                    </div>
+
+                    <button class="btn d-block w-100 btn-primary" type="submit" data-bs-dismiss="modal" aria-label="Close ">Actualizar usuario</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

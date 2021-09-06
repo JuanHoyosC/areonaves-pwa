@@ -7,6 +7,7 @@
 
 .contenedor-columnas {
     background-color: var(--bg-secundario);
+    color: var(--color-secundario);
     max-width: 320px;
     width: 100%;
     margin: 0 auto;

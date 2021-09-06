@@ -1,9 +1,13 @@
-<header class="mb-3">
-    <app-navbar></app-navbar>
-</header>
-<main class="container mb-3">
-    <h2 class="m-0 mb-3">{{ _usuario.usuario.usuario }}</h2>
-    <router-outlet></router-outlet>
-</main>
+<div class="d-flex flex-column justify-content-between" style="min-height: 100vh;">
+    <div>
+        <header class="mb-5">
+            <app-navbar></app-navbar>
+        </header>
+        <main class="container mb-5">
+            <h2 class="m-0 mb-3" style="color: var(--color-secundario)">{{ _usuario.usuario.usuario }}</h2>
+            <router-outlet></router-outlet>
+        </main>
+    </div>
 
-<app-footer></app-footer>
+    <app-footer></app-footer>
+</div>

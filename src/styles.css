@@ -1,25 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~ngx-toastr/toastr.css';
 :root {
+    --bg-primario: #dfdfdf;
+    --bg-secundario: #fff;
     --color-primario: #4f37e9;
     --color-primario-5: #4f37e9e7;
+    --color-secundario: #0a0a0a;
+    --color-border: rgba(0, 0, 0, .1);
     --color-primario-texto: #000;
-    --bg-primario: #ececec;
-    --bg-secundario: #fff;
     --color-shadow: rgba(0, 0, 0, 0.1);
     --color-critical: #ff3838;
-    --color-libre: #2dccff;
+    --color-critical-5: #ff3838e5;
+    --color-libre: #1a82a5;
+    --color-libre-5: #1a82a5da;
+    --color-date-picker: 0;
 }
 
 [data-theme="dark"] {
-    --color-primario: #ffffff;
-    --color-primario-5: #b0a6f0e7;
-    --color-primario-texto: #fff;
-    --bg-primario: #36373a;
-    --bg-secundario: #1f2229;
-    --color-shadow: rgba(0, 0, 0, 0.1);
-    --color-critical: #ff3838;
-    --color-libre: #2dccff;
+    --bg-primario: #000;
+    --bg-secundario: #191C24;
+    --bg-input: transparent;
+    --color-input: #fff;
+    --color-secundario: #fff;
+    --color-border: rgba(255, 255, 255, .1);
+    --color-date-picker: 1;
 }
 
 *,
@@ -27,7 +32,6 @@
 *::after {
     box-sizing: border-box;
     transition: all 1s ease-in-out;
-    color: var(--color-primario-texto);
 }
 
 textarea:focus,
@@ -40,6 +44,7 @@ input[type="number"]:focus,
 button:focus,
 button:hover,
 button:active,
+select,
 [type="text"].form-control:focus,
 [type="password"].form-control:focus,
 [type="email"].form-control:focus,
@@ -67,7 +72,7 @@ button:active,
     .table td {
         text-align: left;
         position: relative;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid var(--color-border);
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: .5rem .5rem;
@@ -76,8 +81,7 @@ button:active,
     .table td::before {
         content: attr(data-label);
         font-weight: bold;
-        color: #000;
-        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid var(--color-border);
     }
 }
 
@@ -92,4 +96,87 @@ button:active,
 
 .link:hover {
     color: var(--color-primario-5);
+}
+
+
+/*CAMBIANDO LOS ESTILOS DE BOOTSTRAP*/
+
+.btn.btn-primary {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: #fff;
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--color-primario-5);
+    border-color: var(--color-primario);
+}
+
+.btn.btn-danger {
+    background-color: var(--color-critical);
+    border-color: var(--color-critical);
+    color: #fff;
+}
+
+.btn.btn-danger:hover {
+    background-color: var(--color-critical-5);
+    border-color: var(--color-critical-5);
+}
+
+.btn.btn-warning {
+    background-color: var(--color-libre);
+    border-color: var(--color-libre);
+    color: #fff;
+}
+
+.btn.btn-warning:hover {
+    background-color: var(--color-libre-5);
+    border-color: var(--color-libre);
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 0px 5px 1px var(--color-border);
+}
+
+.card,
+.modal-content {
+    background-color: var(--bg-secundario);
+    color: var(--color-secundario);
+}
+
+.modal-header {
+    border-color: var(--color-border);
+}
+
+.form-control,
+.form-select,
+.form-select option {
+    background-color: var(--bg-input);
+    color: var(--color-input);
+    border-color: var(--color-border);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--bg-input);
+    color: var(--color-input);
+    border-color: var(--color-primario);
+}
+
+
+/**  EDITAR TABLE GLOBAL     **/
+
+table {
+    box-shadow: 0px 0px 5px 1px var(--color-border);
+}
+
+table td,
+table tr {
+    color: var(--color-secundario);
+    border: 1px solid var(--color-border);
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    filter: invert(var(--color-date-picker));
 }

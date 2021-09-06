@@ -5,13 +5,21 @@
 }
 
 .indicador-icono i {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .indicador-texto-h4,
 .indicador-texto-p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 0;
-    margin-bottom: 0rem;
-    color: var(--color-primario-texto);
+}
+
+.indicador-total {
+    background-color: var(--color-primario);
+    color: #fff;
+}
+
+.indicador-libre {
+    background-color: var(--color-libre);
+    color: #fff;
 }
