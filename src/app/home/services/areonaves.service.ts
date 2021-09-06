@@ -24,7 +24,6 @@ export class AreonavesService {
 
   //Obtiene las areonaves que ha sido alquilada por el usuario activo
   obtenerAreonavesId() {
-    console.log(this._usuarios.usuario, 'adasdas')
     return this.http.get(`${environment.baseUrl}/areonave/obtener/${this._usuarios.usuario.id}`)
       .pipe(
         map((res: any) => res.areonaves)

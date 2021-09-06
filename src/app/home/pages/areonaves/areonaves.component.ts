@@ -17,8 +17,7 @@ export class AreonavesComponent {
   MisAreonaves: any[] = [];
   
   //Inicializa los arreglos
-  constructor(private _areonaves: AreonavesService, private _usuarios: UsuariosService, private formBuilder: FormBuilder, private _alertas: AlertasService) {
-    this._usuarios.decodificarToken();
+  constructor(private _areonaves: AreonavesService, private formBuilder: FormBuilder, private _alertas: AlertasService) {
     this.obtenerAreonavesLibres();
     this.obtenerMisAreonaves();
   }
@@ -40,7 +39,7 @@ export class AreonavesComponent {
 
   //Formularop
   areonaveForm = this.formBuilder.group({
-    ubicacion: ['', [Validators.required]],
+    ubicacion: ['', [Validators.required, Validators.minLength(1)]],
     salida: ['', [Validators.required]],
     llegada: ['', [Validators.required]],
     pasajeros: [10, [Validators.required]],

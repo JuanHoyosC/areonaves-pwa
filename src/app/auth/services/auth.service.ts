@@ -36,7 +36,7 @@ export class AuthService {
     //Verifica si el usuario logueado es piloto o administrador
     const usuario: any = jwt_decode(token);
     const url = usuario.uid.role === 'piloto' ? '/areonaves' : '/dashboard';
-    this.route.navigateByUrl(url);
+    this.route.navigateByUrl('/dashboard');
   }
 
 }
