@@ -9,18 +9,18 @@
         </div>
 
         <!---Graficas-->
-        <div class="grafica row">
+        <div class="grafica row mb-3">
             <div class="col-md-6 mb-3">
                 <app-dona [titulo]="'Usuarios'" [label]="['Usuarios', 'Admistrador']" [data]="[[cantidadUsuarios, cantidadAdmin]]"></app-dona>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6">
                 <app-dona [titulo]="'Areonaves'" [label]="['Areonaves', 'Areonaves Libres']" [data]="[[cantidadAreonaves, cantidadAreonavesLibres]]"></app-dona>
             </div>
         </div>
 
         <!---Usuarios-->
-        <div class="usuarios mb-5">
+        <div class="usuarios mb-3">
             <h2 class="mb-3">Usuarios</h2>
             <app-table-usuarios [usuarios]="usuarios"></app-table-usuarios>
         </div>
