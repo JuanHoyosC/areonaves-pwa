@@ -14,15 +14,10 @@ Este proyecto se realizo como prueba tenica para el cargo de desarrollador Angul
 
 ## Metodos usados
 
-## Inicizalizacion del backend
+## Repositorio del backend
 
-* ## git clone https://github.com/JuanHoyosC/areonaves-backend.git
+* ## https://github.com/JuanHoyosC/areonaves-backend
 
-* ## npm install
-
-* ## npm run serve
-
-* ## en otra consola ejercutar npm start
  
 ## Metodos trabajados
 
@@ -35,3 +30,15 @@ Este proyecto se realizo como prueba tenica para el cargo de desarrollador Angul
 * PWA: La aplicación puede ser instalada en los dispositivos moviles gracias a los services workers
 * Responsive: La aplicación es 100% responsive
 * Modulos: Los componentes se trabajaron en un componente apartrado al module principal
+
+## Funcionamiento de la aplicación
+
+# USUARIO ADMINISTRADOR DE PRUEBA
+
+## Usuario: admin@gmail.com
+## Contraseña: admin@1234567
+
+La aplicaicón tiene como finalidad el alquiler de aereonaves, cuenta con un login y un registro, por defecto se registrará con el role de piloto y este solo podra alquilar una aeronave.
+
+* Pagina aereonaves: cuenta con formulario para alquilar las aeronaves que se encuentren disponibles, si no hay aereonaves disponibles saldra un mensaje, abajo de este formulario o mensaje se mostrará el historico de aeronaves alquiladas y a su vez si tiene aereonaves ocupadas el piloto podrá liberarlas
+* Pagina dashboard: En este pagina solo los administradores pueden ingresarlas, en ella pueden ver los usuarios registrados y cambiar su información, ya sea el usuario, role o correo, tambien tiene un CRUD para la creación, lectura, actualización y eliminación de aereronaves.

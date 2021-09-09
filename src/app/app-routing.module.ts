@@ -9,12 +9,14 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-    canActivate: [VerificarAuthGuard]
+    canActivate: [VerificarAuthGuard],
+    canLoad: [VerificarAuthGuard]
   },
   {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-    canActivate: [VerificarHomeGuard]
+    canActivate: [VerificarHomeGuard],
+    canLoad: [VerificarHomeGuard]
   },
   {
     path: '**',

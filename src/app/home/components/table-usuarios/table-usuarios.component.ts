@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { UsuariosService } from '../../services/usuarios.service';
 
@@ -7,28 +8,31 @@ import { UsuariosService } from '../../services/usuarios.service';
   templateUrl: './table-usuarios.component.html',
   styleUrls: ['./table-usuarios.component.css']
 })
-export class TableUsuariosComponent implements OnInit {
+export class TableUsuariosComponent implements OnDestroy {
 
   @Input() usuarios: any[] = [];
   usuarioSeleccionado: any = {};
 
+  usuarios$: Subscription = new Subscription();
+
   constructor(private _usuarios: UsuariosService, private _alertas: AlertasService) { }
 
-  ngOnInit(): void {
-    this._usuarios.obtenerUsuarios().subscribe(usuarios => this.usuarios = usuarios);
+  //Elimina las subscripciones
+  ngOnDestroy(): void {
+    this.usuarios$.unsubscribe();
   }
 
-
   //Se encarga de eliminar un usuario
-  eliminarUsuario(id: string) {
-    
+  eliminarUsuario(id: string) {    
     if( id != '1') this.usuarios = this.usuarios.filter(usuario => usuario.id !== id);
-    this._usuarios.eliminarUsuario(id).subscribe( (res: any) => this._alertas.mensajeSuccess(res.msg));
+    const eliminar$ =  this._usuarios.eliminarUsuario(id).subscribe( (res: any) => this._alertas.mensajeSuccess(res.msg));
+    this.usuarios$.add(eliminar$);
   }
 
   //Se encarga de acutalizar un usuario
   actualizarUsuario(usuario: any) {
-    this._usuarios.actualizarUsuario(usuario).subscribe( (res: any) => this._alertas.mensajeSuccess(res.msg));
+    const actualizar$ =  this._usuarios.actualizarUsuario(usuario).subscribe( (res: any) => this._alertas.mensajeSuccess(res.msg));
+    this.usuarios$.add(actualizar$);
   }
 
   //Se encarga de selecciona un usuario para mostrar en el modal
